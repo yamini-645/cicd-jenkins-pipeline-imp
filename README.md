@@ -14,6 +14,41 @@ Whenever the pipeline runs, Jenkins automatically:
 
 ---
 
+## Architecture
+
+```text
+Developer
+    │
+    ▼
+GitHub Repository
+    │
+    ▼
+Jenkins Pipeline
+    │
+    ▼
+Checkout Source Code
+    │
+    ▼
+Build Docker Image
+    │
+    ▼
+Docker Login
+    │
+    ▼
+Push Image to Docker Hub
+    │
+    ▼
+Execute deploy.sh
+    │
+    ▼
+Docker Container
+    │
+    ▼
+Flask Application (Port 5001)
+```
+
+---
+
 ## 🛠 Technologies Used
 
 - Jenkins
@@ -44,11 +79,12 @@ cicd-jenkins-pipeline-imp/
 
 ## ⚙ Pipeline Workflow
 
-1. Checkout Source Code
-2. Build Docker Image
-3. Docker Login
-4. Push Image to Docker Hub
-5. Deploy Application
+1. Checkout source code from GitHub
+2. Build the Docker image
+3. Authenticate with Docker Hub
+4. Push the Docker image to Docker Hub
+5. Execute the deployment script
+6. Deploy the updated Flask application
 
 ---
 
