@@ -16,6 +16,14 @@ Whenever the pipeline runs, Jenkins automatically:
 
 ## Architecture
 
+The following diagram illustrates the complete CI/CD workflow of this project.
+
+<p align="center">
+  <img src="images/architecture-diagram.png" alt="CI/CD Pipeline Architecture" width="900"/>
+</p>
+
+### 📌 Pipeline Flow (Reference)
+
 ```text
 Developer
     │
