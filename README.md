@@ -1,68 +1,112 @@
-# CI/CD Pipeline using Jenkins
+# 🚀 CI/CD Pipeline Automation using Jenkins
 
 ## 📌 Project Overview
 
-This project demonstrates a simple CI/CD pipeline using Jenkins and a Python Flask application.
+This project demonstrates an end-to-end CI/CD pipeline using Jenkins to automate the build, Docker image creation, Docker Hub push, and deployment of a Flask application.
 
-The application is built locally, version-controlled using Git, and hosted on GitHub. This project will be enhanced with Jenkins, Docker, and Kubernetes to build a complete CI/CD pipeline.
+Whenever the pipeline runs, Jenkins automatically:
+
+- Checks out the latest source code from GitHub
+- Builds a Docker image
+- Logs into Docker Hub
+- Pushes the latest image
+- Deploys the application using a deployment script
 
 ---
 
-## 🚀 Technologies Used
+## 🛠 Technologies Used
 
-- Python
-- Flask
+- Jenkins
 - Git
 - GitHub
-- Jenkins
-- Docker 
-- Linux (WSL)
+- Docker
+- Docker Hub
+- Flask
+- Linux Shell Script (deploy.sh)
 
 ---
 
 ## 📂 Project Structure
 
 ```
-cicd-jenkins-pipeline
+cicd-jenkins-pipeline-imp/
 │
 ├── app.py
+├── Dockerfile
+├── deploy.sh
+├── Jenkinsfile
 ├── requirements.txt
-└── README.md
+├── README.md
+└── .dockerignore
 ```
 
 ---
 
-## ▶️ Run the Application
+## ⚙ Pipeline Workflow
 
-Install dependencies:
+1. Checkout Source Code
+2. Build Docker Image
+3. Docker Login
+4. Push Image to Docker Hub
+5. Deploy Application
 
-```bash
-pip install -r requirements.txt
+---
+
+## 🚀 Deployment Process
+
+The deployment script performs the following tasks:
+
+- Stops the existing container
+- Removes the old container
+- Pulls/uses the latest Docker image
+- Starts a new container
+- Verifies the deployment
+
+---
+
+## 📦 Docker Image
+
+Repository:
+
+```
+yamini786/cicd-jenkins-pipeline
 ```
 
-Run the application:
+---
 
-```bash
-python3 app.py
-```
+## 🌐 Application
 
-Open:
+Flask Application runs on:
 
 ```
-http://localhost:5000
+http://localhost:5001
 ```
 
-Expected Output:
+---
 
-```
-Hello from DevOps CI/CD Pipeline!
-```
+## 📈 Jenkins Pipeline Stages
+
+- Checkout
+- Build Docker Image
+- Docker Login
+- Push Docker Image
+- Deploy
+
+---
+
+## 📚 Skills Demonstrated
+
+- CI/CD Pipeline Automation
+- Jenkins Pipeline
+- Jenkinsfile
+- Docker Containerization
+- Docker Hub Integration
+- Git Version Control
+- Automated Deployment
+- Shell Scripting
 
 ---
 
 ## 👩‍💻 Author
 
 Yamini Nelluru
-
-GitHub:
-https://github.com/yamini-645
